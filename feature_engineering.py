@@ -4,6 +4,14 @@ from sklearn.preprocessing import LabelEncoder
 # Load your dataset (adjust the filename if needed)
 df = pd.read_csv("uber_fares_cleaned.csv")
 
+# Rename 'index' to 'ride_index' if it exists
+if 'index' in df.columns:
+    df = df.rename(columns={'index': 'ride_index'})
+
+# Rename 'Unnamed: 0' to 'ride_index' if it exists (for safety)
+if 'Unnamed: 0' in df.columns:
+    df = df.rename(columns={'Unnamed: 0': 'ride_index'})
+
 # Convert pickup_datetime to datetime format
 df['pickup_datetime'] = pd.to_datetime(df['pickup_datetime'], errors='coerce')
 
