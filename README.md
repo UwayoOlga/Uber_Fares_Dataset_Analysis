@@ -24,8 +24,31 @@ This project analyzes the Uber Fares Dataset to uncover insights into fare patte
   - Validate latitude and longitude ranges
   - Calculating trip distance (`distance_km`) using the Haversine formula.
   - Export the cleaned DataFrame to uber_fares_cleaned.csv 
+ ![Step 3: Data CLeaning](images/screenshots/datacleaningstep2.jpeg)
 
-**Step 3: Feature Engineering**
+ **Step 4: Exploratory Data Analysis (EDA)**
+- Generated descriptive statistics including:
+      ▪ Mean, median, mode, standard deviation
+      ▪ Quartiles and data ranges
+      ▪ Outlier identification
+- Created visualizations showing fare distribution patterns
+- Analyze relationships between key variables:
+      ▪ Fare amount vs. distance traveled
+      ▪ Fare amount vs. time of day
+      ▪ Additional relevant correlations
+Below are key EDA plots generated during the analysis:
+
+<p float="left">
+  <img src="images/fare_amount_distribution.png" alt="Fare Amount Distribution" width="300"/>
+  - **Fare vs. Distance:**  
+  There is a positive correlation between fare amount and trip distance, as expected.
+  <img src="images/fare_amount_vs_distance.png" alt="Fare Amount vs Distance" width="300"/>
+  <img src="images/fare_amount_by_hour_of_day.png" alt="Fare Amount by Hour of Day" width="300"/>
+  <img src="images/fare_amount_by_passenger_count.png" alt="Fare Amount by Passenger Count" width="300"/>
+  <img src="images/distance_by_passenger_count.png" alt="Distance by Passenger Count" width="300"/>
+  <img src="images/correlation_heatmap.png" alt="Correlation Heatmap" width="300"/>
+</p>
+**Step 5: Feature Engineering**
 - Feature engineering was performed using Python (`feature_engineering.py`), including:
   - Extracting `hour`, `day`, `month`, `year` from `pickup_datetime`.
   - Creating `day_of_week` (numeric) and `day_name` (string) for weekday analysis.
@@ -33,38 +56,19 @@ This project analyzes the Uber Fares Dataset to uncover insights into fare patte
   - Encoding categorical variables (`peak_time`, `day_name`) for analysis.
   - Renaming index columns for clarity.
   - Saving the enhanced dataset to `uber_fares_enhanced.csv`.
- ![Step 3: Feature Engineering](images/screenshots/dataloadingStep1.jpeg)
+ ![Step 3: Feature Engineering](images/step3_feature_engineering.png)
 
-**Data Analysis:**
-- Exploratory Data Analysis (EDA) was conducted in Python (`eda.py`), including:
-  - Descriptive statistics (mean, median, mode, quartiles, etc.).
-  - Outlier detection and removal.
-  - Visualizations: fare distribution, fare vs. distance, time-based patterns, and correlation heatmaps.
 
 **Dashboard Development:**
 - The cleaned and enhanced dataset was imported into Power BI.
 - Interactive visuals were created: fare distribution, time series, ride patterns by hour/day/month, and geographic maps.
-
-**Exploratory Data Analysis (EDA) Visuals:**
-
-Below are key EDA plots generated during the analysis:
-
-<p float="left">
-  <img src="images/fare_amount_distribution.png" alt="Fare Amount Distribution" width="300"/>
-  <img src="images/fare_amount_vs_distance.png" alt="Fare Amount vs Distance" width="300"/>
-  <img src="images/fare_amount_by_hour_of_day.png" alt="Fare Amount by Hour of Day" width="300"/>
-  <img src="images/fare_amount_by_passenger_count.png" alt="Fare Amount by Passenger Count" width="300"/>
-  <img src="images/distance_by_passenger_count.png" alt="Distance by Passenger Count" width="300"/>
-  <img src="images/correlation_heatmap.png" alt="Correlation Heatmap" width="300"/>
-</p>
 
 ## 3. Analysis: Detailed Findings and Statistical Insights
 
 - **Fare Distribution:**  
   Most fares are concentrated in the lower range, with a long tail of higher fares. Outliers were removed using the IQR method for clearer analysis.
 
-- **Fare vs. Distance:**  
-  There is a positive correlation between fare amount and trip distance, as expected.
+
 
 - **Temporal Patterns:**  
   - **Hourly:** Rides peak during morning (7–9 AM) and evening (4–7 PM) rush hours.
