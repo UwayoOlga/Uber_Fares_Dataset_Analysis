@@ -15,14 +15,14 @@ This project analyzes the Uber Fares Dataset to uncover insights into fare patte
 
 **Step 1: Data Loading**
 - Data was loaded into Python for initial inspection and cleaning.
-- ![Step 1: Data Loading](images/step1_loading.png)
+- ![Step 1: Data Loading](images/screenshots/dataloadingStep1.jpeg)
 
 **Step 2: Data Cleaning**
 - Data cleaning was performed using Python (`clean_uber_data.py`), including:
   - Removing missing and invalid values.
   - Filtering outliers and unrealistic coordinates.
   - Calculating trip distance (`distance_km`) using the Haversine formula.
-- ![Step 2: Data Cleaning](images/step2_cleaning.png)
+- ![Step 2: Data Cleaning](images/screenshots/datacleaningstep2.jpeg)
 
 **Feature Engineering:**
 - Additional features were created (`feature_engineering.py`):
