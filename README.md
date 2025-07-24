@@ -11,7 +11,7 @@ This project analyzes the Uber Fares Dataset to uncover insights into fare patte
 ## 2. Methodology: Data Collection and Analysis Approach
 
 **Data Collection:**
-- The dataset was sourced from Kaggle and contains historical Uber ride records, including fare amount, pickup/dropoff coordinates, passenger count, and timestamps.
+- The dataset was sourced from Kaggle and contains historical Uber ride records, including key, fare_amount, pickup_datetime, passenger_count, pickup_longitude, pickup_latitude, dropoff_longitude, dropoff_latitude 
 
 **Step 1: Data Loading**
 - Data was loaded into Python for initial inspection and cleaning.
@@ -67,8 +67,8 @@ Below are visualizations for the cleand data in powerbi:
 
 <p float="left">
   <img src="images/cleandata/clean1.jpeg"   width="300"/>
-  <img src="images/cleandata/clean1.jpeg"   width="300"/>
-  <img src="images/cleandata/clean1.jpeg"   width="300"/>
+  <img src="images/cleandata/clean2.jpeg"   width="300"/>
+  <img src="images/cleandata/clean3.jpeg"   width="300"/>
 </p>
 To analyze seasonal trends, the following DAX formula was used to create a 'Season' column based on the month of the pickup date:
 
