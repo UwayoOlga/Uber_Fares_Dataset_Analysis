@@ -21,14 +21,19 @@ This project analyzes the Uber Fares Dataset to uncover insights into fare patte
 - Data cleaning was performed using Python (`clean_uber_data.py`), including:
   - Removing missing and invalid values.
   - Filtering outliers and unrealistic coordinates.
+  - Validate latitude and longitude ranges
   - Calculating trip distance (`distance_km`) using the Haversine formula.
-- ![Step 2: Data Cleaning](images/screenshots/datacleaningstep2.jpeg)
+  - Export the cleaned DataFrame to uber_fares_cleaned.csv 
 
-**Feature Engineering:**
-- Additional features were created (`feature_engineering.py`):
-  - Extracted `hour`, `day`, `month`, `year`, `day_of_week`, and `day_name` from pickup timestamps.
-  - Created a `peak_time` indicator (Peak/Off-Peak).
-  - Encoded categorical variables for Power BI compatibility.
+**Step 3: Feature Engineering**
+- Feature engineering was performed using Python (`feature_engineering.py`), including:
+  - Extracting `hour`, `day`, `month`, `year` from `pickup_datetime`.
+  - Creating `day_of_week` (numeric) and `day_name` (string) for weekday analysis.
+  - Creating a `peak_time` indicator (Peak/Off-Peak) based on hour.
+  - Encoding categorical variables (`peak_time`, `day_name`) for analysis.
+  - Renaming index columns for clarity.
+  - Saving the enhanced dataset to `uber_fares_enhanced.csv`.
+ ![Step 3: Feature Engineering](images/screenshots/dataloadingStep1.jpeg)
 
 **Data Analysis:**
 - Exploratory Data Analysis (EDA) was conducted in Python (`eda.py`), including:
@@ -39,6 +44,19 @@ This project analyzes the Uber Fares Dataset to uncover insights into fare patte
 **Dashboard Development:**
 - The cleaned and enhanced dataset was imported into Power BI.
 - Interactive visuals were created: fare distribution, time series, ride patterns by hour/day/month, and geographic maps.
+
+**Exploratory Data Analysis (EDA) Visuals:**
+
+Below are key EDA plots generated during the analysis:
+
+<p float="left">
+  <img src="images/fare_amount_distribution.png" alt="Fare Amount Distribution" width="300"/>
+  <img src="images/fare_amount_vs_distance.png" alt="Fare Amount vs Distance" width="300"/>
+  <img src="images/fare_amount_by_hour_of_day.png" alt="Fare Amount by Hour of Day" width="300"/>
+  <img src="images/fare_amount_by_passenger_count.png" alt="Fare Amount by Passenger Count" width="300"/>
+  <img src="images/distance_by_passenger_count.png" alt="Distance by Passenger Count" width="300"/>
+  <img src="images/correlation_heatmap.png" alt="Correlation Heatmap" width="300"/>
+</p>
 
 ## 3. Analysis: Detailed Findings and Statistical Insights
 
