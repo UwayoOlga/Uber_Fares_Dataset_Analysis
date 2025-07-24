@@ -13,6 +13,13 @@ def haversine(lon1, lat1, lon2, lat2):
     return c * r
 
 df = pd.read_csv("uber_fares_dataset.csv")
+
+df = df[
+    df['pickup_latitude'].between(-90, 90) &
+    df['pickup_longitude'].between(-180, 180) &
+    df['dropoff_latitude'].between(-90, 90) &
+    df['dropoff_longitude'].between(-180, 180)
+]
  
 df['pickup_datetime'] = pd.to_datetime(df['pickup_datetime'])
  
@@ -22,9 +29,6 @@ df = df[df['fare_amount'] >= 0]
  
 df = df[(df['passenger_count'] >= 1) & (df['passenger_count'] <= 6)]
  
-df = df[df['pickup_latitude'].between(-90, 90) & df['dropoff_latitude'].between(-90, 90)]
-df = df[df['pickup_longitude'].between(-180, 180) & df['dropoff_longitude'].between(-180, 180)]
- 
 df['distance_km'] = haversine(
     df['pickup_longitude'], df['pickup_latitude'],
     df['dropoff_longitude'], df['dropoff_latitude']
@@ -32,6 +36,11 @@ df['distance_km'] = haversine(
  
 print("Missing values after cleaning:\n", df.isnull().sum())
 print("Duplicate rows after cleaning:", df.duplicated().sum())
- 
+print(df[
+    (df['pickup_latitude'] > 90) | (df['pickup_latitude'] < -90) |
+    (df['pickup_longitude'] > 180) | (df['pickup_longitude'] < -180) |
+    (df['dropoff_latitude'] > 90) | (df['dropoff_latitude'] < -90) |
+    (df['dropoff_longitude'] > 180) | (df['dropoff_longitude'] < -180)
+])
 df.to_csv("uber_fares_cleaned.csv", index=False)
 print("Cleaned dataset saved as 'uber_fares_cleaned.csv' with distance_km column.")
