@@ -61,7 +61,7 @@ Below are key EDA plots generated during the analysis:
   - Saving the enhanced dataset to `uber_fares_enhanced.csv`.
  ![Step 5: Feature Engineering](images/screenshots/featureengineering.png)
 
-## Data Analysis in Power BI
+## 3. Data Analysis in Power BI
 **Clean Uber data visualizations**
 Below are visualizations for the cleand data in powerbi:
 
@@ -98,9 +98,7 @@ SWITCH (
 
 ![](images/dashboard_steps/step3.png)
 
- 
-
-## Analysis: Detailed Findings and Statistical Insights
+## 4. Analysis: Detailed Findings and Statistical Insights
 
 - **Fare Distribution:**
   Most fares are concentrated in the lower range, with a long tail of higher fares. Outliers were removed using the IQR method for clearer analysis.
@@ -125,7 +123,7 @@ Data entry errors because Latitude: must be -90 to 90 and  Longitude: -180 to 18
   Weather impact could not be analyzed due to lack of weather columns in the dataset.
 
 
-## 4. Results: Key Discoveries and Pattern Identification
+## 5. Results: Key Discoveries and Pattern Identification
 
 - **Busiest Periods:**  
   - Peak hours: 7–9 AM and 4–7 PM.
@@ -139,14 +137,14 @@ Data entry errors because Latitude: must be -90 to 90 and  Longitude: -180 to 18
 - **No Weather Data:**  
   - Weather impact could not be analyzed due to lack of weather columns.
 
-## 5. Conclusion: Summary of Main Findings
+## 6. Conclusion: Summary of Main Findings
 
 - Uber rides show clear temporal and spatial patterns, with demand peaking during rush hours and in central locations.
 - Fare amount is strongly linked to distance traveled.
 - Data cleaning and feature engineering were essential for accurate analysis and visualization.
 - The Power BI dashboard enables interactive exploration of these patterns.
 
-## 6. Recommendations: Data-Driven Business Suggestions
+## 7. Recommendations: Data-Driven Business Suggestions
 
 - **Dynamic Pricing:**  
   Consider adjusting fares during peak hours and in high-demand locations to maximize revenue.
@@ -162,6 +160,6 @@ Data entry errors because Latitude: must be -90 to 90 and  Longitude: -180 to 18
 
 ---
 
-**Appendices (Optional):**
+**Appendices:**
 - Screenshots of the Power BI dashboard and key visuals (see `images/` folder for step-by-step screenshots).
-- Code snippets or links to your GitHub repository for reproducibility. 
+ 
